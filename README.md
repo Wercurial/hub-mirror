@@ -25,7 +25,7 @@
 ## 3. 已有魔法，本地使用
 
 ```shell
-go install github.com/togettoyou/hub-mirror@latest
+go install github.com/myysophia/hub-mirror
 ```
 
 ```shell
