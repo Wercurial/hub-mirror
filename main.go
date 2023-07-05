@@ -41,7 +41,7 @@ func main() {
 	fmt.Printf("%+v\n", hubMirrors)
 
 	fmt.Println("连接 Docker")
-	cli, err := client.NewClientWithOpts(client.WithHost("registry.cn-hangzhou.aliyuncs.com"), client.FromEnv, client.WithAPIVersionNegotiation())
+	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		panic(err)
 	}
