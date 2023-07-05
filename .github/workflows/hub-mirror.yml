@@ -29,7 +29,7 @@ jobs:
       - name: Run code
         run: go run main.go --username=${{ secrets.DOCKERHUB_USERNAME }} --password=${{ secrets.DOCKERHUB_TOKEN }} --content='${{ github.event.issue.body }}' --maxContent=11 --outputPath=output.sh
         #run: go run main.go --username=${{ secrets.ALIYUN_USERNAME }} --password=${{ secrets.ALIYUN_PASSWD }} --content='${{ github.event.issue.body }}' --maxContent=11 --outputPath=output.sh
-      # 4. 当成功输出 output.sh 文件时，为 issues 添加评论
+      # 4. 当成功输出 output.sh 文件时，为 issues 添加评论，告知下一步操作
       - name: Add comment
         if: ${{ hashFiles('output.sh') }}
         uses: actions/github-script@v5
