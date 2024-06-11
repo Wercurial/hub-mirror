@@ -41,7 +41,7 @@ func main() {
 	fmt.Printf("%+v\n", hubMirrors)
 
 	fmt.Println("连接 Docker")
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+	cli, err := client.NewClientWithOpts(WithHost("registry.cn-hangzhou.aliyuncs.com"), client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		panic(err)
 	}
@@ -77,7 +77,9 @@ func main() {
 			continue
 		}
 
-		target := *username + "/" + strings.ReplaceAll(source, "/", ".")
+		//target := *username + "/" + strings.ReplaceAll(source, "/", ".")
+		target := *registry.cn-hangzhou.aliyuncs.com/k8s-image-dl/dl-images + "/" + strings.ReplaceAll(source, "/", ".")
+		
 
 		wg.Add(1)
 		go func(source, target string) {
